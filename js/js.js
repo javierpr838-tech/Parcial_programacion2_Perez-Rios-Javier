@@ -9,7 +9,7 @@ const mensaje = document.createElement("div");
 
 mensaje.textContent = "Bienvenido a AgroCasanare Digital";
 
-mensaje.style.background = "#639827db";
+mensaje.style.background = "#12b320cf";
 mensaje.style.color = "white";
 mensaje.style.padding = "12px";
 mensaje.style.textAlign = "center";
@@ -128,60 +128,5 @@ formulario.addEventListener("submit", function(e){
         <p>Total con IVA: ${totalFinal}</p>
 
     `;
-// MENU RESPONSIVE
-const botonMenu = document.getElementById("botonMenu");
-const menu = document.getElementById("menu");
 
-botonMenu.addEventListener("click", () => {
-    menu.classList.toggle("mostrar");
-});
-
-
-// AÑO AUTOMÁTICO
-document.getElementById("anio").textContent = new Date().getFullYear();
-
-
-// COTIZADOR
-const formulario = document.getElementById("formulario");
-
-formulario.addEventListener("submit", function(e) {
-
-    e.preventDefault();
-
-    // CAPTURAR DATOS
-    const nombre = document.getElementById("nombre").value;
-    const producto = document.getElementById("producto");
-    const cantidad = document.getElementById("cantidad").value;
-
-    // MENSAJES
-    const error = document.getElementById("error");
-    const resultado = document.getElementById("resultado");
-
-    // LIMPIAR MENSAJES
-    error.innerHTML = "";
-    resultado.innerHTML = "";
-
-    // VALIDACIÓN
-    if (
-        nombre.trim() === "" ||
-        producto.value === "" ||
-        cantidad === ""
-    ) {
-
-        error.innerHTML = "Complete todos los campos.";
-        return;
-    }
-
-    // CALCULAR
-    const precio = Number(producto.value);
-    const total = precio * Number(cantidad);
-
-    // MOSTRAR RESULTADO
-    resultado.innerHTML = `
-        <h3>Resumen del pedido</h3>
-        <p><strong>Cliente:</strong> ${nombre}</p>
-        <p><strong>Cantidad:</strong> ${cantidad}</p>
-        <p><strong>Total:</strong> $${total.toLocaleString()}</p>
-    `;
-});
 });
