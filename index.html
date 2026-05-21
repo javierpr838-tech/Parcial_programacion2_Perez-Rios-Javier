@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgroCasanare Digital </title>
+
+    <meta name="description"
+        content="Empresa agropecuaria del Casanare especializada en maquinaria agrícola, sistemas de riego e insumos para el campo.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <!-- JavaScript -->
+    <script src="js/script.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logoEmpresa">
+
+            <img src="imagen/logo.jpg"
+                alt="Logo AgroCasanare.jpg">
+
+            <h1>AgroCasanare Digital</h1>
+
+        </div>
+
+        <!-- BOTON MENU -->
+        <button id="botonMenu" aria-label="Abrir menú">
+            ☰
+        </button>
+
+        <!-- MENU -->
+        <nav>
+
+            <ul id="menu">
+
+                <li><a href="#inicio">Inicio</a></li>
+
+                <li><a href="#nosotros">Nosotros</a></li>
+
+                <li><a href="#productos">Productos</a></li>
+
+                <li><a href="#cotizador">Cotizador</a></li>
+
+                <li><a href="#contacto">Contacto</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- INICIO -->
+        <section id="inicio" class="inicio">
+
+            <h2>Soluciones para el campo llanero</h2>
+
+            <p>
+                Más de 30 años apoyando al sector agropecuario del Casanare.
+            </p>
+
+            <a href="#cotizador" class="botonPrincipal">
+                Cotizar ahora
+            </a>
+
+        </section>
+
+        <!-- NOSOTROS -->
+        <section id="nosotros">
+
+            <article>
+
+                <h2>Quiénes somos</h2>
+
+                <p>
+                    AgroCasanare es una reconocida empresa 100% casanareña fundada en 1995,
+                    dedicada a proveer insumos, maquinaria agrícola, sistemas de riego y
+                    herramientas para el sector agropecuario.
+                </p>
+
+                <p>
+                    Operamos como aliados estratégicos de campesinos y productores de la
+                    región llanera, ofreciendo productos de marcas especializadas,
+                    acompañamiento técnico y soluciones para fortalecer el trabajo en el campo.
+                </p>
+
+                <p>
+                    Nuestro compromiso es impulsar el desarrollo agrícola y ganadero del
+                    Casanare mediante innovación, calidad y excelente servicio.
+                </p>
+
+            </article>
+
+        </section>
+
+        <!-- PRODUCTOS -->
+        <section id="productos">
+
+            <h2>Nuestros productos</h2>
+
+            <div class="contenedorProductos">
+
+                <!-- PRODUCTO 1 -->
+                <article class="cardProducto">
+
+                    <img src="imagen/fumigadora.jpg" alt="Maquinaria agrícola" >
+
+                    <h3>Maquinaria Agrícola</h3>
+
+                    <p>
+                        Equipos especializados para mejorar la productividad del campo.
+                    </p>
+
+                    <p class="precio">
+                        Desde $2.500.000
+                    </p>
+
+                </article>
+
+                <!-- PRODUCTO 2 -->
+                <article class="cardProducto">
+
+                    <img src="imagen/sistema-de-aspersion.jpeg"
+                        alt="Sistema de riego agrícola">
+
+                    <h3>Sistemas de Riego</h3>
+
+                    <p>
+                        Soluciones modernas para optimizar el riego de cultivos.
+                    </p>
+
+                    <p class="precio">
+                        Desde $850.000
+                    </p>
+
+                </article>
+
+                <!-- PRODUCTO 3 -->
+                <article class="cardProducto">
+
+                    <img src="imagen/agricola.png.webp"
+                        alt="Herramientas agropecuarias">
+
+                    <h3>Herramientas Agropecuarias</h3>
+
+                    <p>
+                        Herramientas resistentes y de alta calidad para el trabajo rural.
+                    </p>
+
+                    <p class="precio">
+                        Desde $120.000
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- ASIDE -->
+        <aside>
+
+            <h2>Dato importante</h2>
+
+            <p>
+                Casanare es uno de los departamentos con mayor crecimiento
+                agropecuario de Colombia, destacándose en agricultura,
+                ganadería y tecnificación del campo.
+            </p>
+
+        </aside>
+
+      <!-- COTIZADOR -->
+<section id="cotizador">
+
+    <h2>Cotizador de pedidos</h2>
+
+    <form id="formularioCotizador">
+
+        <!-- NOMBRE -->
+        <label for="nombre">
+            Nombre del cliente
+        </label>
+
+        <input 
+            type="text"
+            id="nombre"
+            placeholder="Digite su nombre"
+            required
+        >
+
+        <!-- PRODUCTO -->
+        <label for="producto">
+            Producto
+        </label>
+
+        <select id="producto" required>
+
+            <option value="">
+                Seleccione un producto
+            </option>
+
+            <option value="2500000">
+                Maquinaria Agrícola
+            </option>
+
+            <option value="850000">
+                Sistemas de Riego
+            </option>
+
+            <option value="120000">
+                Herramientas Agropecuarias
+            </option>
+
+        </select>
+
+        <!-- CANTIDAD -->
+        <label for="cantidad">
+            Cantidad
+        </label>
+
+        <input 
+            type="number"
+            id="cantidad"
+            min="1"
+            placeholder="Digite cantidad"
+            required
+        >
+
+        <!-- BOTÓN -->
+        <button type="submit">
+            Calcular pedido
+        </button>
+
+    </form>
+
+    <!-- MENSAJES -->
+    <div id="error"></div>
+
+    <div id="resultado"></div>
+
+</section>
+
+</main>
+
+<script>
+
+document.getElementById("formularioCotizador").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    // CAPTURAR DATOS
+    let nombre = document.getElementById("nombre").value;
+
+    let producto = document.getElementById("producto");
+
+    let nombreProducto = producto.options[producto.selectedIndex].text;
+
+    let precio = parseInt(producto.value);
+
+    let cantidad = parseInt(document.getElementById("cantidad").value);
+
+    // VALIDACIÓN
+    if(
+        nombre.trim() === "" ||
+        producto.value === "" ||
+        isNaN(cantidad)
+    ){
+
+        document.getElementById("error").innerHTML =
+            "Complete todos los campos correctamente";
+
+        return;
+    }
+
+    // LIMPIAR ERROR
+    document.getElementById("error").innerHTML = "";
+
+    // CALCULAR TOTAL
+    let total = precio * cantidad;
+
+    // MOSTRAR RESULTADO
+    document.getElementById("resultado").innerHTML =
+
+        "<h3>Resultado del Pedido</h3>" +
+        "<p><strong>Cliente:</strong> " + nombre + "</p>" +
+        "<p><strong>Producto:</strong> " + nombreProducto + "</p>" +
+        "<p><strong>Cantidad:</strong> " + cantidad + "</p>" +
+        "<p><strong>Total:</strong> $" + total.toLocaleString() + "</p>";
+
+});
+
+</script>
+
+</body>
+</html>
+
+</main>
+
+    <!-- FOOTER -->
+    <footer id="contacto">
+
+        <p>
+            Dirección: Yopal - Casanare
+        </p>
+
+        <p>
+            Teléfono: 320 421 0076
+        </p>
+
+        <p>
+            Facebook | Instagram | WhatsApp
+        </p>
+
+        <p>
+            © <span id="anio"></span>
+            AgroCasanare Digital
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
